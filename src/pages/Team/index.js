@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -167,8 +166,10 @@ function Team() {
         </section>
         {/* End Hero */}
         <div>
-                       {/* ======= Chefs Section ======= */}
-                       <section id="chefs" className="chefs">
+                      
+                      
+      {/* ======= Chefs Section ======= */}
+     <section id="chefs" className="chefs">
         <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Team</h2>

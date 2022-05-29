@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -10,6 +9,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import Footer from '../../components/Footer';
+import Lightbox from 'react-lightbox-component';
+import { Button, Icon, Image, Modal } from 'semantic-ui-react'
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -52,6 +54,7 @@ BootstrapDialogTitle.propTypes = {
     
 function Gallery() {
     const [open, setOpen] = React.useState(false);
+    const [open1, setOpen1] = React.useState(false)
 
     const handleClickOpen = () => {
       setOpen(true);
@@ -166,6 +169,46 @@ function Gallery() {
         </section>
         {/* End Hero */}
 
+
+        <Modal
+      open={open1}
+      onClose={() => setOpen1(false)}
+      onOpen={() => setOpen1(true)}
+      className='Semantic-Modal'
+    >
+      <Modal.Header>Event</Modal.Header>
+      <Modal.Content image scrolling>
+        <Image size='medium' src='assets/img/jude.jpg' wrapped />
+
+        <Modal.Description>
+          <div>
+            <div style={{display:'flex',justifyContent:'space-between'}}>
+              <div style={{color:'black',fontWeight:'bold'}}>TITLE :</div> <div style={{color:'#88888888',marginLeft:80}}>Tree Planting..</div>
+            </div>
+
+            <div style={{display:'flex',justifyContent:'space-between',marginTop:50}}>
+              <div style={{color:'black',fontWeight:'bold'}}>DESCRIPTION(S) :</div> <div style={{color:'#88888888',marginLeft:80}}>Tree Planting..</div>
+            </div>
+
+            <div style={{display:'flex',justifyContent:'space-between',marginTop:50}}>
+              <div style={{color:'black',fontWeight:'bold'}}>DATE :</div> <div style={{color:'#88888888',marginLeft:80}}>Tree Planting..</div>
+            </div>
+
+          </div>
+          {/* <p style={{color:'black'}}>
+            This is an example of expanded content that will cause the modal's
+            dimmer to scroll.
+          </p> */}
+
+
+        </Modal.Description>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button onClick={() => setOpen1(false)} primary>
+          Cancel <Icon name='cancel' />
+        </Button>
+      </Modal.Actions>
+    </Modal>
               {/* ======= Gallery Section ======= */}
       <section id="gallery" className="gallery">
         <div className="container" data-aos="fade-up">
@@ -176,65 +219,46 @@ function Gallery() {
         </div>
         <div className="container-fluid" data-aos="fade-up" data-aos-delay={100}>
           <div className="row g-0">
-            <div className="col-lg-3 col-md-4">
+
+  <div  className="col-lg-3 col-md-4">
               <div className="gallery-item">
-                <a href="assets/img/jude.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img  src="assets/img/jude.jpg" alt="" className="img-fluid" />
-                </a>
+                  <img  onClick={() => setOpen1(true)} src="assets/img/jude.jpg" alt="" className="img-fluid" />
               </div>
             </div>
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
-                <a href="assets/img/gallery/gallery-2.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-2.jpg" alt="" className="img-fluid" />
-                </a>
+                  <img  onClick={() => setOpen1(true)} src="assets/img/odero.jpg" alt="" className="img-fluid" />
               </div>
             </div>
+
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
-                <a href="assets/img/gallery/gallery-3.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-3.jpg" alt="" className="img-fluid" />
-                </a>
+                  <img  onClick={() => setOpen1(true)} src="assets/img/jessy.jpg" alt="" className="img-fluid" />
               </div>
             </div>
+
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
-                <a href="assets/img/odero.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img src="assets/img/odero.jpg" alt="" className="img-fluid" />
-                </a>
+                  <img  onClick={() => setOpen1(true)} src="assets/img/jessy.jpg" alt="" className="img-fluid" />
               </div>
             </div>
+
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
-                <a href="assets/img/gallery/gallery-5.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-5.jpg" alt="" className="img-fluid" />
-                </a>
+                  <img  onClick={() => setOpen1(true)} src="assets/img/jessy.jpg" alt="" className="img-fluid" />
               </div>
             </div>
+
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
-                <a href="assets/img/jessy.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img src="assets/img/jessy.jpg" alt="" className="img-fluid" />
-                </a>
+                  <img  onClick={() => setOpen1(true)} src="assets/img/jessy.jpg" alt="" className="img-fluid" />
               </div>
             </div>
-            <div className="col-lg-3 col-md-4">
-              <div className="gallery-item">
-                <a href="assets/img/gallery/gallery-7.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-7.jpg" alt="" className="img-fluid" />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-4">
-              <div className="gallery-item">
-                <a href="assets/img/gallery/gallery-8.jpg" className="gallery-lightbox" data-gall="gallery-item">
-                  <img src="assets/img/gallery/gallery-8.jpg" alt="" className="img-fluid" />
-                </a>
-              </div>
-            </div>
+
           </div>
         </div>
-      </section>{/* End Gallery Section */}
+      </section>
+      {/* End Gallery Section */}
         <div>
 
         </div>

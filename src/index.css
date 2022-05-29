@@ -29,3 +29,11 @@ width: 100;
 
 }
 
+.Semantic-Modal{
+  bottom: auto!important;
+  left: auto!important;
+  right: auto!important;
+  top: auto!important;
+  height: 90vh;
+  background-color: black;
+}
